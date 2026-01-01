@@ -94,7 +94,7 @@ export default function BookPage() {
                 </div>
               </div>
               <motion.a
-                href="https://www.amazon.com/dp/B0GDF12DRT"
+                href="https://www.amazon.com/dp/B0GDJJ7FSX"
                 target="_blank"
                 rel="noopener noreferrer"
                 initial={{ opacity: 0, y: 20 }}

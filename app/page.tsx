@@ -162,7 +162,7 @@ export default function Home() {
           <div className="flex-1 flex justify-center items-center">
             <div className="relative w-full max-w-2xl aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border-4 border-blue-200">
               <Image
-                src="/images/bookpicnic.png"
+                src="/images/BookPicnic.png"
                 alt="Book Picnic Illustration"
                 fill
                 style={{ objectFit: 'cover', objectPosition: 'center' }}
