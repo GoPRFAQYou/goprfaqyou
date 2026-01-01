@@ -1,18 +1,13 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import Navbar from '../components/Navbar';
-import Image from 'next/image';
 
 export default function MethodPage() {
-  const [showModal, setShowModal] = useState(false);
-  const [showLogin, setShowLogin] = useState(false);
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar onSignUpClick={() => setShowModal(true)} onLoginClick={() => setShowLogin(true)} />
+      <Navbar onSignUpClick={() => {}} onLoginClick={() => {}} />
       
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 bg-gradient-to-br from-blue-50 to-orange-50">
@@ -48,11 +43,11 @@ export default function MethodPage() {
             >
               <h2 className="text-4xl font-bold mb-6 text-[#F27700]">What is PRFAQ?</h2>
               <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-                PRFAQ stands for <strong>Press Release - Frequently Asked Questions</strong>. It's a strategic planning methodology 
+                PRFAQ stands for <strong>Press Release - Frequently Asked Questions</strong>. It&apos;s a strategic planning methodology 
                 popularized by Amazon that helps you work backwards from your desired outcome.
               </p>
               <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-                Instead of starting with what you have, you begin by writing the press release you'd want to see when your idea 
+                Instead of starting with what you have, you begin by writing the press release you&apos;d want to see when your idea 
                 succeeds. Then you work backwards to figure out what needs to be true to make that press release a reality.
               </p>
               <p className="text-lg text-gray-700 leading-relaxed">
@@ -88,7 +83,7 @@ export default function MethodPage() {
               {
                 step: '01',
                 title: 'Write the Press Release',
-                description: 'Start with the end in mind. Write the press release announcing your successful idea. Be specific about what you\'re launching and why it matters.',
+                description: 'Start with the end in mind. Write the press release announcing your successful idea. Be specific about what you&apos;re launching and why it matters.',
                 icon: '📰'
               },
               {

@@ -1,17 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { useEffect, useRef, useState } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
-import { useCallback } from "react";
 import Navbar from './components/Navbar';
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [mounted, setMounted] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
   // Use hooks at top level - they'll work once component is mounted
@@ -20,48 +15,15 @@ export default function Home() {
     offset: ["start start", "end end"] 
   });
   
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
-  const y2 = useTransform(scrollYProgress, [0, 1], [0, -200]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0.8]);
-  const parallaxYHero1 = useTransform(scrollYProgress, [0, 1], [0, -120]);
-  const parallaxYHero2 = useTransform(scrollYProgress, [0, 1], [0, -60]);
-  const parallaxYFeatures = useTransform(scrollYProgress, [0, 1], [0, -80]);
-  const parallaxYCTA = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   const [showModal, setShowModal] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     setIsVisible(true);
   }, []);
-
-  // Particle options for a subtle, modern effect
-  const particlesInit = useCallback(async (engine: any) => {
-    await loadFull(engine);
-  }, []);
-  const particlesOptions = {
-    background: { color: { value: "transparent" } },
-    fpsLimit: 60,
-    interactivity: {
-      events: {
-        onClick: { enable: false, mode: "push" },
-        onHover: { enable: false, mode: "repulse" },
-        resize: true,
-      },
-    },
-    particles: {
-      color: { value: ["#F27700", "#1e3a8a", "#0C213B"] },
-      links: { enable: true, color: "#1e3a8a", distance: 120, opacity: 0.2, width: 1 },
-      move: { enable: true, speed: 0.6, random: false, straight: false, outModes: { default: "out" as const } },
-      number: { value: 40, density: { enable: true, area: 800 } },
-      opacity: { value: 0.5 },
-      shape: { type: "circle" },
-      size: { value: { min: 2, max: 4 } },
-    },
-    detectRetina: true,
-  };
 
   // Don't return null - instead render a static version for SSR
   // The component will hydrate properly on the client
@@ -168,7 +130,7 @@ export default function Home() {
         <div className="flex-1 flex flex-col justify-center items-center max-w-xl mx-auto md:mx-0 md:px-8 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#F17600]">EMPOWER YOUR VISION</h2>
           <p className="text-white text-lg md:text-xl mb-6 leading-relaxed">
-            <span className="font-bold">GO PRFAQ YOURSELF</span> is your go-to site for creation and collaboration of the Press Release - Frequently Asked Questions process. Inspired by the innovative methodology popularized by Amazon, we empower individuals to turn their ideas into actionable plans. Sign Up to upload your pre-written <span className="text-[#F17600] font-bold">PRFAQ</span> or utilize our AI Prompts to create your own. Engage with a vibrant community by reading and providing feedback on other PFAQs. Together let's shape the future you want.
+            <span className="font-bold">GO PRFAQ YOURSELF</span> is your go-to site for creation and collaboration of the Press Release - Frequently Asked Questions process. Inspired by the innovative methodology popularized by Amazon, we empower individuals to turn their ideas into actionable plans. Sign Up to upload your pre-written <span className="text-[#F17600] font-bold">PRFAQ</span> or utilize our AI Prompts to create your own. Engage with a vibrant community by reading and providing feedback on other PFAQs. Together let&apos;s shape the future you want.
           </p>
           <a href="#" className="text-[#F17600] underline text-lg font-medium hover:text-orange-400 transition" onClick={e => { e.preventDefault(); setShowModal(true); }}>Sign Up</a>
         </div>

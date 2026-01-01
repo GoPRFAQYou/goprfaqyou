@@ -6,14 +6,12 @@ import Navbar from '../components/Navbar';
 import Image from 'next/image';
 
 export default function BookPage() {
-  const [showModal, setShowModal] = useState(false);
-  const [showLogin, setShowLogin] = useState(false);
   const [showComingSoon, setShowComingSoon] = useState(false);
   const [emailSubmitted, setEmailSubmitted] = useState(false);
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar onSignUpClick={() => setShowModal(true)} onLoginClick={() => setShowLogin(true)} />
+      <Navbar onSignUpClick={() => {}} onLoginClick={() => {}} />
       
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 bg-gradient-to-br from-orange-50 to-blue-50">
@@ -32,7 +30,7 @@ export default function BookPage() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto"
           >
-            Deep dive into the methodology that's transforming how teams plan and execute their boldest ideas.
+            Deep dive into the methodology that&apos;s transforming how teams plan and execute their boldest ideas.
           </motion.p>
         </div>
       </section>
@@ -69,7 +67,7 @@ export default function BookPage() {
                 examples, detailed templates, and expert insights.
               </p>
               <p className="text-lg text-gray-700 mb-4 leading-relaxed">
-                Whether you're launching a startup, planning a product, or transforming your organization, this book 
+                Whether you&apos;re launching a startup, planning a product, or transforming your organization, this book 
                 will show you how to think bigger and work backwards from your vision.
               </p>
               <div className="space-y-4 mt-8">
@@ -91,7 +89,7 @@ export default function BookPage() {
                   <span className="text-2xl">✓</span>
                   <div>
                     <h3 className="font-bold text-blue-900">Expert Tips & Tricks</h3>
-                    <p className="text-gray-700">Insights from practitioners who've mastered the method</p>
+                    <p className="text-gray-700">Insights from practitioners who&apos;ve mastered the method</p>
                   </div>
                 </div>
               </div>
@@ -117,7 +115,7 @@ export default function BookPage() {
       {/* Table of Contents Preview */}
       <section className="py-20 px-4 bg-gradient-to-br from-blue-50 to-orange-50">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold mb-12 text-center text-blue-900">What's Inside</h2>
+          <h2 className="text-4xl font-bold mb-12 text-center text-blue-900">What&apos;s Inside</h2>
           <div className="grid md:grid-cols-2 gap-6">
             {[
               { chapter: 'Section 1', title: 'What is a PRFAQ', description: 'Understanding the methodology and its origins' },
@@ -212,7 +210,7 @@ export default function BookPage() {
                 <div className="text-6xl mb-4">🚀</div>
                 <h2 className="text-3xl font-bold mb-4 text-blue-900">Coming Soon</h2>
                 <p className="text-lg text-gray-700 mb-6">
-                  Our community platform is launching soon! Be the first to know when it's ready.
+                  Our community platform is launching soon! Be the first to know when it&apos;s ready.
                 </p>
                 <form
                   className="flex flex-col gap-4"
@@ -245,7 +243,7 @@ export default function BookPage() {
                 <div className="text-5xl mb-4">✓</div>
                 <div className="text-2xl font-bold mb-4 text-blue-900">Thank you!</div>
                 <div className="text-lg text-gray-700 text-center">
-                  We'll notify you as soon as our community platform is ready.
+                  We&apos;ll notify you as soon as our community platform is ready.
                 </div>
               </div>
             )}

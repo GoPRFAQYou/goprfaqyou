@@ -1,12 +1,9 @@
 'use client';
 
-import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
 
 export default function ToolsPage() {
-  const [showModal, setShowModal] = useState(false);
-  const [showLogin, setShowLogin] = useState(false);
 
   const tools = [
     {
@@ -37,7 +34,7 @@ export default function ToolsPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar onSignUpClick={() => setShowModal(true)} onLoginClick={() => setShowLogin(true)} />
+      <Navbar onSignUpClick={() => {}} onLoginClick={() => {}} />
       
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 bg-gradient-to-br from-blue-50 to-orange-50">
@@ -87,7 +84,6 @@ export default function ToolsPage() {
                 </div>
                 <button
                   className="mt-6 w-full bg-[#F27700] text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-600 transition-colors"
-                  onClick={() => setShowModal(true)}
                 >
                   Get Started
                 </button>
@@ -207,7 +203,6 @@ export default function ToolsPage() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="bg-white text-[#F27700] px-8 py-4 rounded-full font-bold text-lg hover:bg-orange-50 transition-colors shadow-lg"
-            onClick={() => setShowModal(true)}
           >
             Start Creating
           </motion.button>
