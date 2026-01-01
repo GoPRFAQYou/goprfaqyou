@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  .animated-gradient-bg {
+    background: linear-gradient(120deg, #0C213B, #1e3a8a, #F27700, #0C213B);
+    background-size: 200% 200%;
+    animation: gradientMove 8s ease-in-out infinite;
+  }
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+:root {
+  --background: 0 0% 100%;     /* white */
+  --foreground: 0 0% 10%;      /* dark gray */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 0 0% 5%;      /* near-black */
+    --foreground: 0 0% 95%;     /* light gray */
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans bg-background text-foreground;
+}
